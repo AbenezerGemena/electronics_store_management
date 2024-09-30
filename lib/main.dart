@@ -51,6 +51,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await setup(); 
+  print(12);
 
   runApp(
     MyApp()
