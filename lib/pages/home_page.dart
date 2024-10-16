@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+     /* appBar: AppBar(
         title: Text(
           "Home"
         ),
@@ -34,9 +34,9 @@ class _HomePageState extends State<HomePage> {
               onPressed: (){
                 _navigationService.pushReplacementNamed("/login");
               },
-              icon: Icon(Icons.logout))
+              icon:const Icon(Icons.logout))
           ],
-      ),
+      ),*/
       body: _buildHomeUI(),
       
     );
@@ -45,117 +45,181 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child:Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width*0.05,
-          vertical: MediaQuery.of(context).size.height*0.156,
+          horizontal: MediaQuery.of(context).size.width*0.01,
+          vertical: MediaQuery.of(context).size.height*0.01,
         ),
         child: Column(
-          
           children: [
-            _addProductButton(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-            _viewProductButton(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-            _updateProductButton(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-            _deleteProduct(),
-
-
+            Padding(padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height*0.02
+            )),
+            _searchBar(),
+            Padding(padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height*0.05
+            )),
+            
+          
+            _menuContainer()
           ],
+         
+          
+          
+
+        
         ),
         )
       );
   }
+
+  Widget _menuContainer(){
+    return Container(
+      height: MediaQuery.of(context).size.height*0.2,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset.zero,
+            blurRadius: 1,
+            blurStyle: BlurStyle.inner,
+           
+          )
+          
+        ]
+      
+
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                Spacer(),
+                _addProductButton(),
+                Spacer(),
+                _viewProduct(),
+                Spacer()
+               
+
+              ],
+
+            )
+            ),
+          Expanded(
+            child: Column(
+              children: [
+                Spacer(),
+                _updateProduct(),
+                Spacer(),
+                _deleteProduct(),
+                Spacer()
+
+                
+              ],
+
+            )
+          )
+        ],
+       
+      ),
+    );
+  }
   Widget _addProductButton(){
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width*0.4,
       height: MediaQuery.of(context).size.height*0.06,
-      child: MaterialButton(
+      child: ElevatedButton(
         onPressed: (){
-          _navigationService.pushNamed("/add");
-        },
-        child:  Text(
-          "Add Product",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white
-            
-          ),
-
-          ),
-        color: Colors.blue[800]
-        
+          _navigationService.pushNamed('/add');
+        }, 
+        child: Text('Add Product')
         ),
+      
+        
     );
 
   }
-    Widget _viewProductButton(){
+  Widget _viewProduct(){
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width*0.4,
       height: MediaQuery.of(context).size.height*0.06,
-      child: MaterialButton(
+      child: ElevatedButton(
         onPressed: (){
-          _navigationService.pushNamed("/view");
-        },
-        child:  Text(
-          "View Product",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white
-            
-          ),
-
-          ),
-        color: Colors.blue[800]
-        
+          _navigationService.pushNamed('/view');
+        }, 
+        child: Text('View Product')
         ),
+      
+        
     );
 
   }
-    Widget _updateProductButton(){
+ Widget _updateProduct(){
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width*0.4,
       height: MediaQuery.of(context).size.height*0.06,
-      child: MaterialButton(
+      child: ElevatedButton(
         onPressed: (){
-          _navigationService.pushNamed("/update");
-        },
-        child:  Text(
-          "Update Product",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white
-            
-          ),
-
-          ),
-        color: Colors.blue[800]
-        
+          _navigationService.pushNamed('/update');
+        }, 
+        child: Text('Update Product')
         ),
+      
+        
     );
 
   }
-    Widget _deleteProduct(){
+  Widget _deleteProduct(){
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width*0.4,
       height: MediaQuery.of(context).size.height*0.06,
-      child: MaterialButton(
+      child: ElevatedButton(
         onPressed: (){
-          _navigationService.pushNamed("/delete");
-        },
-        child:  Text(
-          "Delete Product",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white
-            
-          ),
-
-          ),
-        color: Colors.blue[800]
-        
+          _navigationService.pushNamed('/delete');
+        }, 
+        child: Text('Delete Product')
         ),
+      
+        
     );
 
   }
 
+Widget _searchBar(){
+  return SizedBox(
+    width: MediaQuery.of(context).size.width,
+    height: MediaQuery.of(context).size.height * 0.05,
+    child:SearchAnchor(
+
+      builder:   (BuildContext context, SearchController controller){
+        return SearchBar(
+          leading: Icon(Icons.search),
+          //backgroundColor: WidgetStatePropertyAll(Colors.white),
+          hintText: "Search",
+
+        );
+      }, 
+      suggestionsBuilder:(BuildContext context, SearchController controller) {
+            return List<ListTile>.generate(5, (int index) {
+              final String item = 'item $index';
+              return ListTile(
+                title: Text(item),
+                onTap: () {
+                  setState(() {
+                    controller.closeView(item);
+                  });
+                },
+              );
+            });
+          }
+      )
+  );
+}
+
+
+
+
+
+
+  
 }

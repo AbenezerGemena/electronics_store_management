@@ -94,7 +94,7 @@ class _ViewProductState extends State<ViewProduct> {
           flex: 2,
           child: Container(
             height: MediaQuery.of(context).size.height*0.2,
-            decoration:BoxDecoration(
+            decoration:const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("image/phone.png"),
                 fit: BoxFit.fill
@@ -113,14 +113,14 @@ class _ViewProductState extends State<ViewProduct> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Product Name: Mobile Phone"),
-                Text("Product Types and amount:"),
+               const Text("Product Name: Mobile Phone"),
+               const Text("Product Types and amount:"),
                 Row(
                   
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("ios:  45")
+                    Text("ios:  ")
 
                   ],
                 ),
@@ -128,7 +128,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Android:  50")
+                    Text("Android:  ")
 
                   ],
                 ),
@@ -198,7 +198,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Mac:  30")
+                    Text("Mac:  ")
 
                   ],
                 ),
@@ -206,7 +206,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("PC:  70")
+                    Text("PC:  ")
 
                   ],
                 ),
@@ -214,7 +214,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Desktop:  56")
+                    Text("Desktop:  ")
 
                   ],
                 ),
@@ -292,7 +292,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Smart Tv:  67")
+                    Text("Smart Tv:  ")
 
                   ],
                 ),
@@ -300,7 +300,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Others:  34")
+                    Text("Others:  ")
 
                   ],
                 ),
@@ -377,7 +377,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Charger cable:  79")
+                    Text("Charger cable:  ")
 
                   ],
                 ),
@@ -385,7 +385,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Tv cable:  32")
+                    Text("Tv cable:  ")
 
                   ],
                 ),
@@ -393,7 +393,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Wifi cable:  54")
+                    Text("Wifi cable:  ")
 
                   ],
                 ),
@@ -401,7 +401,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Others: 90")
+                    Text("Others: ")
 
                   ],
                 ),
@@ -472,7 +472,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Smart Watch:  80")
+                    Text("Smart Watch:  ")
 
                   ],
                 ),
@@ -480,7 +480,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Other:  76")
+                    Text("Other:  ")
 
                   ],
                 ),
@@ -554,7 +554,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Airpad:  67")
+                    Text("Airpad:  ")
 
                   ],
                 ),
@@ -562,7 +562,7 @@ class _ViewProductState extends State<ViewProduct> {
                   //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.05)),
-                    Text("Headset:  76")
+                    Text("Headset:  ")
 
                   ],
                 ),

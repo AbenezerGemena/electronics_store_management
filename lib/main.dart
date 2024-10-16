@@ -2,6 +2,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:provider/provider.dart';
 import 'package:store_management/firebase_options.dart';
 import 'package:store_management/pages/add_products.dart';
 import 'package:store_management/pages/delete_products.dart';
@@ -12,6 +13,7 @@ import 'package:store_management/pages/update_products.dart';
 import 'package:store_management/pages/view_product.dart';
 import 'package:store_management/services/alert_service.dart';
 import 'package:store_management/services/auth_service.dart';
+import 'package:store_management/services/product_provider.dart';
 
 
 class NavigationService {
@@ -55,7 +57,15 @@ void main() async {
  
 
   runApp(
-    MyApp()
+    MultiProvider(
+      providers: [
+       ChangeNotifierProvider(create: (_)=> ProductProvider())
+      ],
+
+      child: MyApp(),
+
+    )
+   
    
   );
 }
