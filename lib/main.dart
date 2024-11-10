@@ -51,6 +51,7 @@ class NavigationService {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  print(" clear");
 
   await setup(); 
  
